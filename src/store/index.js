@@ -5,6 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    //商品的数组
+    cartList:[]
   },
   mutations: {
   },
