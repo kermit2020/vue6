@@ -16,6 +16,8 @@ import {
     Checkbox,
     Icon,
     Loading,
+    Search,
+    
 } from 'vant'
 
 Vue.use(Button);
@@ -34,3 +36,5 @@ Vue.use(SubmitBar);
 Vue.use(Checkbox);
 Vue.use(Icon);
 Vue.use(Loading);
+Vue.use(Search);
+

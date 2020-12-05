@@ -1,13 +1,17 @@
-import {$http1} from './axios'
-
-export function getHomeData1(){
+import { $http1 } from './axios'
+//home api
+export function getHomeData1() {
   return $http1({
-    url:'/home/swiperdata'
+    url: '/home/swiperdata'
   })
-} 
-export function getHomeData2(){
+}
+export function getHomeData2() {
   return $http1({
-    url:'/home/catitems'
+    url: '/home/catitems'
   })
-} 
-
+}
+export function getHomeData3() {
+  return $http1({
+    url: '/home/floordata'
+  })
+}
