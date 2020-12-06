@@ -21,3 +21,9 @@ export function getCategoryData1() {
     url: '/categories'
   })
 }
+//goods_list api
+export function getGoodsListData1() {
+  return $http1({
+    url: '/categories'
+  })
+}
