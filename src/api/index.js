@@ -15,3 +15,9 @@ export function getHomeData3() {
     url: '/home/floordata'
   })
 }
+//category api
+export function getCategoryData1() {
+  return $http1({
+    url: '/categories'
+  })
+}

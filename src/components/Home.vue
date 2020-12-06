@@ -5,7 +5,6 @@
     <router-link to="search">
       <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)"/>
       </router-link>
-
     <!-- 搜索框 end -->
     <!-- 轮播图swiper start -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -30,7 +29,7 @@
         </div>
         <!-- 内容 -->
         <div class="floor_content">
-          <router-link :to="v4.navigator_url.replace(/\/pages/,'')" v-for="(v4, i4) in v3.product_list" :key="i4">
+          <router-link :to="v4.navigator_url.replace(/\/pages/,'')" v-for="(v4, i4) in v3.product_list" :key="i4" class="floor_content_router">
             <img :src="v4.image_src" />
           </router-link>
           <!-- mode="{{index===0?'widthFix':'scaleToFill'}}" -->
@@ -72,7 +71,7 @@ export default {
       this.cateList = res.data.message
     })
     getHomeData3().then(res => {
-      console.log(res.data.message)
+      // console.log(res.data.message)
       //获取第3项-楼层
       this.floorList = res.data.message
     })
@@ -107,9 +106,12 @@ export default {
   width: 100%;
   /* box-shadow: 0 1px 1px #eee; 会漏陷*/
 }
+.van-search__content--round{
+border-radius:15*0.01rem ;
+ }
 /**index.wxss**/
 .title {
-  color: var(--themeColor01);
+  color: var(--color-tint);
 }
 .my-swipe .van-swipe-item {
   //    {
@@ -144,7 +146,7 @@ export default {
       }
     }
     .floor_content {
-      a {
+      .floor_content_router {
         float: left;
         width: 33.33%;
 

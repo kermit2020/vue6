@@ -1,11 +1,11 @@
 <template>
   <div class="about">
-    副页吗
+    pay
   </div>
 </template>
 <script>
 export default {
-  name: 'About',
+  name: 'Pay',
   components: {
    
   }
