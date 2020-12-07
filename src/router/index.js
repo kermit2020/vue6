@@ -5,6 +5,7 @@ import pay from '../components/pay.vue'
 import Category from '../components/Category.vue'
 import User from '../components/User.vue'
 import goods_list from '../components/goods_list.vue'
+import detail from '../components/goods_detail.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
     path: '/goods_list',
     name: 'goods_list',
     component: goods_list
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: detail
   },
   {
     path: '/pay',

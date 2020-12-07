@@ -20,6 +20,7 @@ export default {
 
 <style lang='less'>
  @import "assets/css/base.css";
+ @import "assets/css/iconfont.css";
 /* css里用@才可以引用import */ 
 #app {
   position: relative;

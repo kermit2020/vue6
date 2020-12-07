@@ -7,7 +7,7 @@
     </router-link>
     <tab-control :titles="['综合', '销量', '价格']" class="tab-control" @tabClickNow="tabClickNow"></tab-control>
     <div class="first_tab" ref="tabRef" id="tab">
-      <router-link class="goods_item" v-for="(v1, i1) in goodsList" :key="i1" :to="'/pages/goods_detail/index?goods_id=' + v1.goods_id">
+      <router-link class="goods_item" v-for="(v1, i1) in goodsList" :key="i1" :to="'/detail?goods_id=' + v1.goods_id">
         <!-- 左侧 图片容器 -->
         <div class="goods_img_wrap">
           <img :src="v1.goods_small_logo ? v1.goods_small_logo : 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'" />

@@ -28,3 +28,10 @@ export function getGoodsListData1(params) {
     params
   })
 }
+//detail api
+export function getDetailData1(params) {
+  return $http1({
+    url: '/goods/detail',
+    params
+  })
+}
