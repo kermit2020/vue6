@@ -22,8 +22,9 @@ export function getCategoryData1() {
   })
 }
 //goods_list api
-export function getGoodsListData1() {
+export function getGoodsListData1(params) {
   return $http1({
-    url: '/categories'
+    url: '/goods/search',
+    params
   })
 }

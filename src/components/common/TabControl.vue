@@ -35,13 +35,14 @@ export default {
   text-align: center;
   position: sticky;
   top:6.8vh;
+  background-color: #fff;
 }
 .tab_item {
   flex:1;
   height: 6vh;
   line-height: 6vh;
   background-color: #eee;
-  font-size: 14px;
+  font-size: 0.3rem;
   
 }
 .active{
@@ -50,7 +51,7 @@ export default {
 
 }
 .active span {
-padding: 5px;
-border-bottom:2px solid var(--color-tint);
+padding: 5/50rem;
+border-bottom:2/50rem solid var(--color-tint);
 }
 </style>

@@ -21,7 +21,7 @@
 
     height: 7vh;
     line-height: 7vh;
-    font-size:16px;
+    font-size:16/50rem;
     text-align: center;
 
     border-bottom: 1px solid #eee;

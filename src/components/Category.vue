@@ -2,8 +2,8 @@
   <div id="category" class="category">
     <nav-bar class="navbar"><div slot="center">优购分类</div></nav-bar>
     <!-- 搜索框 start -->
-    <router-link to="search" class="search">
-      <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" />
+    <router-link to="search" >
+      <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" class="search"/>
     </router-link>
     <!-- 搜索框 end -->
     <div class="cates_container">
@@ -104,11 +104,11 @@ export default {
         let leftList = []
         let rightList = []
         leftList = this.cateList.map(v => v.cat_name)
-        console.log(leftList)
+        // console.log(leftList)
         rightList = this.cateList[0].children
-        console.log(rightList)
+        // console.log(rightList)
         this.$set((this.leftList = leftList), (this.rightList = rightList))
-        console.log(this.rightList)
+        // console.log(this.rightList)
       })
     },
     //左侧菜单点击项
@@ -141,28 +141,11 @@ export default {
   width: 100%;
   font-size: 16/50rem;
 }
-.nav-bar {
-  background-color: var(--color-tint);
-  /* height: 7vh;  */
-  font-weight: 700;
-  color: #fff;
-  position: fixed; /* 这些是原生滚动使用的 */
-  left: 0;
-  top: 0;
-  right: 0;
-  z-index: 999;
-  width: 100%;
-  /* box-shadow: 0 1px 1px #eee; 会漏陷*/
-}
 .search {
   position: fixed; /* 这些是原生滚动使用的 */
   left: 0;
   top: 7vh;
   right: 0;
-
-  .van-search__content--round {
-    border-radius: 15 * 0.01rem;
-  }
 }
 /* pages/category/index.wxss */
 html {
@@ -175,7 +158,7 @@ html {
     /* 防止less自动编译用 ~'内容' 且运算2边空格*/
     // height: ~'calc(100vh - 90*0.01rem)';
     // height: calc(100vh - 90*0.01rem);
-    margin-top: 15.4vh;
+    margin-top: 14vh;
     display: flex;
     overflow: hidden;
     height: 84%;
@@ -184,13 +167,14 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
+    padding-bottom: 2vh;
     .left_menu {
       flex: 2;
       float: left;
       overflow: auto;
       // width: 70%;
-      height: 92%;
-      padding-bottom: 2vh;
+      height: 93%;
+      // padding-bottom: 1vh;
       .menu_item {
         height: 80 * 0.01rem;
         display: flex;
@@ -208,7 +192,7 @@ html {
       float: left;
       overflow: auto;
 
-      height: 92%;
+      height: 93%;
       padding-bottom: 2vh;
       .goods_group {
         .all_title {
