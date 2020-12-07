@@ -16,14 +16,11 @@
   .nav-bar {
     position: relative;
     z-index: 10;
-
     display: flex;
-
     height: 7vh;
     line-height: 7vh;
-    font-size:16px;
+    font-size:16/50rem;
     text-align: center;
-
     border-bottom: 1px solid #eee;
     /* box-shadow: 0 1px 1px rgba(100,100,100,.08); */
   }

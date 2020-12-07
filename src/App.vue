@@ -27,6 +27,33 @@ export default {
  overflow: auto;
  
 }
+.nav-bar {
+  background-color: var(--color-tint);
+  /* height: 7vh;  */
+  font-weight: 700;
+  color: #fff;
+  position: fixed; /* 这些是原生滚动使用的 */
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  /* box-shadow: 0 1px 1px #eee; 会漏陷*/
+}
+.search{
+  height: 7vh!important;
+}
+.van-cell {
+  font-size: 14/50rem;
+  line-height: 24/50rem;
+}
+.van-search__content--round{
+border-radius:15*0.01rem ;
+ }
+.van-icon{
+  font-size:16/50rem;
+  
+}
 }
 
 </style>

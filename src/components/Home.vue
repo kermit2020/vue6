@@ -3,7 +3,7 @@
     <nav-bar class="navbar"><div slot="center">优购首页</div></nav-bar>
     <!-- 搜索框 start -->
     <router-link to="search">
-      <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)"/>
+      <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" class="search"/>
       </router-link>
     <!-- 搜索框 end -->
     <!-- 轮播图swiper start -->
@@ -93,22 +93,7 @@ export default {
   width: 100%;
   font-size: 16/50rem;
 }
-.nav-bar {
-  background-color: var(--color-tint);
-  /* height: 7vh;  */
-  font-weight: 700;
-  color: #fff;
-  position: fixed; /* 这些是原生滚动使用的 */
-  left: 0;
-  top: 0;
-  right: 0;
-  z-index: 999;
-  width: 100%;
-  /* box-shadow: 0 1px 1px #eee; 会漏陷*/
-}
-.van-search__content--round{
-border-radius:15*0.01rem ;
- }
+
 /**index.wxss**/
 .title {
   color: var(--color-tint);

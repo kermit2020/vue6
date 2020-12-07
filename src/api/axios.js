@@ -1,6 +1,6 @@
 /* 对请求解构防止耦合,并解决回调函数地狱 */
 import axios from 'axios'
-
+import { Toast } from 'vant';
 export function $http1(option) {
   //因为axios上层用了promise封装这里就直接return就可以了,如果没有就需要这样
   //但对于一般程序就是用这个promise封装
@@ -14,17 +14,25 @@ export function $http1(option) {
   //2.axios请求拦截器
   instance1.interceptors.request.use(config => {
   // Do something before request is sent
+  Toast.loading({
+    message: '加载中...',
+    forbidClick: true,
+    loadingType: 'spinner'
+  });
   return config;
   },error => {
   // Do something with request error
+  console.log(error);
   return Promise.reject(error);
   });
   //2.2响应拦截器
   instance1.interceptors.response.use(response => {
   // Do something before response is sent
+  Toast.clear();
   return response;
   },error => {
   // Do something with response error
+  console.log(error);
   return Promise.reject(error);
   });
   //发出真正的网络请求

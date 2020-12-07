@@ -35,13 +35,14 @@ export default {
   text-align: center;
   position: sticky;
   top:6.8vh;
+  background-color: #fff;
 }
 .tab_item {
   flex:1;
   height: 6vh;
   line-height: 6vh;
   background-color: #eee;
-  font-size: 14px;
+  font-size: 14/50rem;
   
 }
 .active{
