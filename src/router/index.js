@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../components/Home.vue'
 import pay from '../components/pay.vue'
 import Category from '../components/Category.vue'
+import Cart from '../components/Cart.vue'
 import User from '../components/User.vue'
 import goods_list from '../components/goods_list.vue'
 import detail from '../components/goods_detail.vue'
@@ -13,21 +14,39 @@ const routes = [
   {
     path: '/',
     redirect: '/home'
+    
   },
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path: '/category',
     name: 'Category',
-    component: Category
+    component: Category,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path: '/user',
     name: 'User',
-    component: User
+    component: User,
+    meta: {
+      showFooter: true
+    }
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
+    meta: {
+      showFooter: true
+    }
   },
   {
     path: '/goods_list',
