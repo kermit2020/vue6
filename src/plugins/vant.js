@@ -17,7 +17,7 @@ import {
     Icon,
     Loading,
     Search,
-    
+    Dialog
 } from 'vant'
 
 Vue.use(Button);
@@ -37,4 +37,5 @@ Vue.use(Checkbox);
 Vue.use(Icon);
 Vue.use(Loading);
 Vue.use(Search);
+Vue.use(Dialog);
 

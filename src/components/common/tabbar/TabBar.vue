@@ -14,7 +14,7 @@
   #tab-bar {
     /* 本身的样式 */
     background-color: #f6f6f6;
-    height: 49/50rem;
+    height: 49/50rem!important;
     border-top: 1px solid #eee;
     box-shadow: 0px -1px 1px rgba(150,150,150,.08);
 
@@ -26,7 +26,7 @@
     bottom: 0;
 
     /* 利用flex进行布局 */
-    display: flex;
+    display: flex; 
     text-align: center;
   
   }

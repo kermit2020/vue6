@@ -38,14 +38,17 @@
     height: 1rem;
     display: flex;
     flex-direction: column;
+    
   }
   .item-icon,.item-active-icon{
-    height: 0.9rem;
-    margin-top: -0.3rem;
+    flex:2;
+    height: 0.3rem;
+    // margin-top: -0.3rem;
   }
   .item-icon img,  img {
     width: 24/50rem;
     height: 24/50rem;
+    margin-top: -0.66rem; 
     // margin-top: 0.1rem;
     vertical-align: middle;
     
@@ -53,8 +56,9 @@
   }
 
   .item-text {
+    flex:1;
     font-size: 12/50rem;
-    margin-top: 0.06rem;
+    margin-bottom: 0.09rem;
     color: #333;
     
   }

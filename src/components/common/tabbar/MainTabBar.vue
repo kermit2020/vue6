@@ -1,5 +1,5 @@
 <template>
-  <tab-bar>
+  <tab-bar class="MainTab">
     <tab-bar-item link="/home">
       <img slot="icon" src="@/assets/img/tabbar/home.svg" alt="">
       <img slot="active-icon" src="@/assets/img/tabbar/home_active.svg" alt="">
@@ -36,5 +36,5 @@
   </script>
 
 <style scoped>
-
+/* .mainTab{overflow: hidden;} */
 </style>

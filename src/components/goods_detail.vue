@@ -13,7 +13,6 @@
     <div class="goods_name_row">
       <div class="goods_name">{{ goodsObj.goods_name }}</div>
       <div class="goods_collect" @click="chooseCollect">
-        <!-- bindtap="chooseCollect" -->
         <span class="iconfont" :class="isCollect ? 'icon-shoucang1' : 'icon-shoucang'"></span>
         <div class="icon_text">收藏</div>
       </div>
@@ -197,7 +196,7 @@ export default {
   padding: 0 10 * 0.01rem;
   display: flex;
   color: #666;
-  font-size: 26 * 0.01rem;
+  font-size: 28 * 0.01rem;
   border-bottom: 10 * 0.01rem solid #fff;
   .goods_name {
     display: -webkit-box;
