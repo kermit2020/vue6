@@ -15,7 +15,7 @@
       <img slot="active-icon" src="@/assets/img/tabbar/cart_active.svg" alt="">
       <div slot="text">购物车</div>
     </tab-bar-item>
-    <tab-bar-item link="/profile">
+    <tab-bar-item link="/user">
       <img slot="icon" src="@/assets/img/tabbar/profile.svg" alt="">
       <img slot="active-icon" src="@/assets/img/tabbar/profile_active.svg" alt="">
       <div slot="text">我的</div>
