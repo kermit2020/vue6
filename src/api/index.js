@@ -35,3 +35,10 @@ export function getDetailData1(params) {
     params
   })
 }
+//search api
+export function getSearchData1(params) {
+  return $http1({
+    url: '/goods/qsearch',
+    params:{query:params}
+  })
+}

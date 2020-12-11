@@ -1,9 +1,13 @@
 <template>
   <div id="goods_list" class="goods_list">
-    <nav-bar class="navbar"><div slot="center">商品列表</div></nav-bar>
+    <nav-bar class="navbar">
+      <div slot="left" class="back" @click="$router.history.go(-1)">
+        <van-icon class="iconLeft" name="arrow-left" color="#fff" />
+      </div>
+      <div slot="center">商品列表</div></nav-bar>
     <!-- 搜索框 start -->
-    <router-link to="search" >
-      <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" class="search"/>
+    <router-link to="search">
+      <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" class="search" />
     </router-link>
     <tab-control :titles="['综合', '销量', '价格']" class="tab-control" @tabClickNow="tabClickNow"></tab-control>
     <div class="first_tab" ref="tabRef" id="tab">
@@ -48,19 +52,23 @@ export default {
   },
   mounted() {
     // console.log(this.$route)
+
+    this.QueryParams.cid = this.$route.query.cid || ''
+    this.QueryParams.query = this.$route.query.query || ''
+    console.log(this.QueryParams.cid)
+    this.getGoodsList()
+  },
+  updated() {},
+  activated() {
     let a
     if (!a) {
       a = window.addEventListener('scroll', this.discuzScroll)
     }
-    this.QueryParams.cid = this.$route.query.cid || ''
-    this.QueryParams.query = this.$route.query.query || ''
-    console.log(this.QueryParams.cid);
-    this.getGoodsList()
   },
-  updated() {},
-  destroyed() {
+  deactivated() {
     window.removeEventListener('scroll', this.discuzScroll)
   },
+  destroyed() {},
   methods: {
     getGoodsList() {
       // console.log(this.QueryParams)
@@ -105,9 +113,9 @@ export default {
       let scrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset
       let dom = document.getElementById('goods_list')
       let domHeight = dom.offsetHeight
-      let top = Math.ceil(document.documentElement.clientHeight*0.85)//设备高度减去margin的15vh,可能这里用padding就不用计算了
+      let top = Math.ceil(document.documentElement.clientHeight * 0.85) //设备高度减去margin的15vh,可能这里用padding就不用计算了
       // let domHeight = this.$refs.tabRef.$el.offsetHeight
-      console.log(top);
+      console.log(top)
       console.log(scrollTop, domHeight)
       // console.log(this.$refs.tabRef.scrollTop)
 
@@ -143,6 +151,13 @@ export default {
   padding-top: 7vh;
   width: 100%;
   font-size: 16/50rem;
+}
+.back .iconLeft {
+  text-align: left;
+  margin-left: -0.4rem;
+  vertical-align: middle;
+  // margin-bottom: 2px;
+  // background-color: #fff;
 }
 
 .search {
@@ -188,7 +203,7 @@ export default {
           -webkit-line-clamp: 2;
         }
         .goods_price {
-          color: var(--themeColor01);
+          color: var(--color-tint);
           font-size: 32rpx;
         }
       }

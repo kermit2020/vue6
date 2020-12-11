@@ -261,16 +261,17 @@ page {
       display: flex;
       padding: 10 * 0.01rem;
       border-bottom: 1 * 0.01rem solid #ccc;
+      
       .cart_checked_wrap {
-        flex: 1;
+        width: 100/7%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        
+        // align-items: center;
+      
       }
 
       a.cart_pic_wrap {
-        flex: 2;
+        width: 200/7%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -281,7 +282,7 @@ page {
       }
 
       .cart_info_wrap {
-        flex: 4;
+        width: 400/7%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -337,7 +338,7 @@ page {
 .footer_tool {
   border-top: 1 * 0.01rem solid #ccc;
   position: fixed;
-  bottom: 7vh;
+  bottom: 100*0.01rem;
   left: 0;
   width: 100%;
   height: 90 * 0.01rem;
@@ -348,7 +349,8 @@ page {
     flex: 2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+    
   }
 
   .total_price_wrap {

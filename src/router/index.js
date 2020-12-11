@@ -7,6 +7,7 @@ import Cart from '../components/Cart.vue'
 import User from '../components/User.vue'
 import goods_list from '../components/goods_list.vue'
 import detail from '../components/goods_detail.vue'
+import search from '../components/search.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +22,8 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      showFooter: true
+      showFooter: true,
+      isKeep: true
     }
   },
   {
@@ -29,7 +31,8 @@ const routes = [
     name: 'Category',
     component: Category,
     meta: {
-      showFooter: true
+      showFooter: true,
+      isKeep: true
     }
   },
   {
@@ -51,12 +54,20 @@ const routes = [
   {
     path: '/goods_list',
     name: 'goods_list',
-    component: goods_list
+    component: goods_list,
+    meta: {
+      isKeep: true
+    }
   },
   {
     path: '/detail',
     name: 'detail',
     component: detail
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: search
   },
   {
     path: '/pay',

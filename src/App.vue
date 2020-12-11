@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <!-- <keep-alive exclude="Detail"> -->
-    <router-view class="wrap"></router-view>
-    <!-- </keep-alive> -->
+    <!-- exclude="Detail" -->
+    <keep-alive >
+    <router-view class="wrap" v-if="$route.meta.isKeep"></router-view>
+    </keep-alive>
+    <router-view class="wrap" v-if="!$route.meta.isKeep"></router-view>
     <MainTabBar v-show="$route.meta.showFooter"></MainTabBar>
   </div>
 </template>
@@ -50,6 +52,19 @@ export default {
   }
   .van-icon {
     font-size: 16/50rem;
+  }
+  .back>.van-icon {
+    font-size: 25/50rem;
+  }
+  .van-checkbox__icon{
+    // height: 0;
+    font-size:20/50rem;
+  }
+  .van-button{
+    height: 44/50rem;
+  }
+  .van-button--normal{
+    font-size: 14/50rem;
   }
 }
 </style>

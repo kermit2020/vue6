@@ -1,6 +1,11 @@
 <template>
   <div id="detail">
-    <nav-bar class="navbar"><div slot="center">商品详情</div></nav-bar>
+    <nav-bar class="navbar">
+      <div slot="left" class="back" @click="$router.history.go(-1)">
+        <!-- <img src="@/assets/img/common/back.svg" alt="" /> -->
+        <van-icon  class="iconLeft" name="arrow-left" color="#fff" />
+        </div>
+      <div slot="center">商品详情</div></nav-bar>
     <!-- javascript:history.go(-1) -->
     <!-- 轮播图swiper start -->
     <van-swipe class="detail_swiper" :autoplay="3000" indicator-color="white">
@@ -174,6 +179,13 @@ export default {
   padding-top: 7vh;
   width: 100%;
   font-size: 16/50rem;
+}
+.back .iconLeft{
+  text-align: left;
+  margin-left: -0.4rem;
+  vertical-align: middle;
+  // margin-bottom: 2px;
+  // background-color: #fff;
 }
 /* pages/goods_detail/index.wxss */
 .detail_swiper {

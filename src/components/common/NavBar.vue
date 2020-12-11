@@ -26,14 +26,14 @@
   }
 
   .nav-left {
-    width: 60px;
+   flex:1
   }
 
   .nav-center {
-    flex: 1;
+    flex: 5;
   }
 
   .nav-right {
-    width: 60px;
+    flex:1
   }
 </style>
