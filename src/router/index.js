@@ -9,6 +9,7 @@ import goods_list from '../components/goods_list.vue'
 import detail from '../components/goods_detail.vue'
 import search from '../components/search.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -57,7 +58,8 @@ const routes = [
     component: goods_list,
     meta: {
       isKeep: true
-    }
+    },
+    
   },
   {
     path: '/detail',
@@ -82,5 +84,25 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-
+let isRefresh =0
+sessionStorage.setItem('isRefresh',isRefresh)
+router.afterEach((to, from) => {
+  
+  
+  if (!from.path.includes('detail')&&to.path.includes('goods_list')) {
+     isRefresh =sessionStorage.getItem('isRefresh') 
+    
+    if(isRefresh>= 1){
+      sessionStorage.setItem('isRefresh',0)
+      window.location.reload()
+    }
+    else{
+      isRefresh++
+      console.log("isRefresh" +isRefresh);
+      sessionStorage.setItem('isRefresh',isRefresh)
+      
+    }
+  }
+ 
+})
 export default router

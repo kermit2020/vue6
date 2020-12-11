@@ -4,7 +4,8 @@
       <div slot="left" class="back" @click="$router.history.go(-1)">
         <van-icon class="iconLeft" name="arrow-left" color="#fff" />
       </div>
-      <div slot="center">商品列表</div></nav-bar>
+      <div slot="center">商品列表</div></nav-bar
+    >
     <!-- 搜索框 start -->
     <router-link to="search">
       <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" class="search" />
@@ -30,7 +31,7 @@ import NavBar from '@/components/common/NavBar'
 import TabControl from '@/components/common/TabControl'
 import { getGoodsListData1 } from '@/api'
 import { Toast } from 'vant'
-export default {
+ export default {
   components: {
     NavBar,
     TabControl
@@ -47,11 +48,58 @@ export default {
       },
       now: 0,
       isLoad: false,
-      totalPages: Number
+      totalPages: Number,
+      routerClear: true //缓存清除
     }
   },
+  // beforeRouteLeave(to, from, next) {
+  //   if (to.path.includes('detail')) {
+  //     from.meta.isKeep = true
+  //   } else {
+  //     from.meta.isKeep = false
+  //   }
+  //   next()
+  // },
+ 
+  // beforeRouteLeave(to, from, next) {
+  //   //判断路径是否需要keepalive,以及不保存则销毁页面
+  //   let that = this
+  //   console.log(this)
+  //   if (to.path.includes('detail')) {
+  //     from.meta.isKeep = true
+  //   } else {
+  //     // from.meta.isKeep = false 没必要,原因是组件清除不需要了
+  //     let vnode = that.$vnode
+  //     let parentVnode = vnode && vnode.parent
+  //     if (parentVnode && parentVnode.componentInstance && parentVnode.componentInstance.cache) {
+  //       var key = vnode.key == null ? vnode.componentOptions.Ctor.cid + (vnode.componentOptions.tag ? `::${vnode.componentOptions.tag}` : '') : vnode.key
+  //       var cache = parentVnode.componentInstance.cache
+  //       var keys = parentVnode.componentInstance.keys
+
+  //       if (cache[key]) {
+  //         that.$destroy()
+  //         // remove key
+  //         if (keys.length) {
+  //           var index = keys.indexOf(key)
+  //           if (index > -1) {
+  //             keys.splice(index, 1)
+  //           }
+  //         }
+
+  //         cache[key] = null
+  //       }
+  //     }
+  //   }
+  //   next()
+  // },
   mounted() {
+    console.log('iskeep', this.$route)
     // console.log(this.$route)
+
+    let a
+    if (!a) {
+      a = window.addEventListener('scroll', this.discuzScroll)
+    }
 
     this.QueryParams.cid = this.$route.query.cid || ''
     this.QueryParams.query = this.$route.query.query || ''
@@ -68,7 +116,9 @@ export default {
   deactivated() {
     window.removeEventListener('scroll', this.discuzScroll)
   },
-  destroyed() {},
+  destroyed() {
+    window.removeEventListener('scroll', this.discuzScroll)
+  },
   methods: {
     getGoodsList() {
       // console.log(this.QueryParams)

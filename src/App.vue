@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <!-- exclude="Detail" -->
-    <keep-alive >
-    <router-view class="wrap" v-if="$route.meta.isKeep"></router-view>
+    <keep-alive>
+      <router-view class="wrap" v-if="$route.meta.isKeep" ></router-view>
     </keep-alive>
-    <router-view class="wrap" v-if="!$route.meta.isKeep"></router-view>
+    <router-view class="wrap" v-if="!$route.meta.isKeep" :key="key"></router-view>
     <MainTabBar v-show="$route.meta.showFooter"></MainTabBar>
   </div>
 </template>
@@ -14,7 +14,16 @@ export default {
   name: 'app',
   components: {
     MainTabBar
-  }
+  },
+  computed: {
+    key() {//防止router不刷新方法
+      return this.$route.name !== undefined
+        ? this.$route.name + +new Date()
+        : this.$route + +new Date();
+    }
+  },
+  
+
 }
 </script>
 
@@ -53,17 +62,17 @@ export default {
   .van-icon {
     font-size: 16/50rem;
   }
-  .back>.van-icon {
+  .back > .van-icon {
     font-size: 25/50rem;
   }
-  .van-checkbox__icon{
+  .van-checkbox__icon {
     // height: 0;
-    font-size:20/50rem;
+    font-size: 20/50rem;
   }
-  .van-button{
+  .van-button {
     height: 44/50rem;
   }
-  .van-button--normal{
+  .van-button--normal {
     font-size: 14/50rem;
   }
 }
