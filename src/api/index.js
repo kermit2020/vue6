@@ -1,4 +1,4 @@
-import { $http1 } from './axios'
+import { $http1, $http2 } from './axios'
 //home api
 export function getHomeData1() {
   return $http1({
@@ -39,6 +39,11 @@ export function getDetailData1(params) {
 export function getSearchData1(params) {
   return $http1({
     url: '/goods/qsearch',
-    params:{query:params}
+    params: { query: params }
   })
+}
+// let baseURL2 = 'http://81.69.11.115:8888/api/private/v1'
+//login api
+export function postLoginData1(params) {
+  return $http2('/login', params, 'POST')
 }

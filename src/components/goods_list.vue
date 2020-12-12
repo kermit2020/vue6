@@ -62,7 +62,7 @@ import { Toast } from 'vant'
   // },
  
   // beforeRouteLeave(to, from, next) {
-  //   //判断路径是否需要keepalive,以及不保存则销毁页面
+  //   //单1出入口时可用//判断路径是否需要keepalive,以及不保存则销毁页面
   //   let that = this
   //   console.log(this)
   //   if (to.path.includes('detail')) {

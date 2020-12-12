@@ -44,7 +44,7 @@
 // @ is an alias to /src
 import NavBar from '@/components/common/NavBar'
 
-import { getHomeData1, getHomeData2, getHomeData3 } from '@/api/'
+import { getHomeData1, getHomeData2, getHomeData3 ,postLoginData1} from '@/api/'
 
 export default {
   name: 'Home',
@@ -56,10 +56,18 @@ export default {
       value: '',
       swiperList: [],
       cateList: [],
-      floorList: []
+      floorList: [],
+      //登录表单数据对应
+        forml:{
+          username:"admin",
+          password:"123456",
+        },
     }
   },
   mounted() {
+    postLoginData1(this.forml).then(res=>{
+      console.log(res);
+    })
     getHomeData1().then(res => {
       // console.log(res);
       //获取第1项-轮播图

@@ -9,14 +9,12 @@ import goods_list from '../components/goods_list.vue'
 import detail from '../components/goods_detail.vue'
 import search from '../components/search.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     redirect: '/home'
-    
   },
   {
     path: '/home',
@@ -58,8 +56,7 @@ const routes = [
     component: goods_list,
     meta: {
       isKeep: true
-    },
-    
+    }
   },
   {
     path: '/detail',
@@ -84,25 +81,21 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-let isRefresh =0
-sessionStorage.setItem('isRefresh',isRefresh)
+//全局路由守卫(afterRach 加载后处理)
+let isRefresh = 0
+sessionStorage.setItem('isRefresh', isRefresh)
 router.afterEach((to, from) => {
-  
-  
-  if (!from.path.includes('detail')&&to.path.includes('goods_list')) {
-     isRefresh =sessionStorage.getItem('isRefresh') 
-    
-    if(isRefresh>= 1){
-      sessionStorage.setItem('isRefresh',0)
+  //其他页面2次进入goodslist清空缓存
+  if (!from.path.includes('detail') && to.path.includes('goods_list')) {
+    isRefresh = sessionStorage.getItem('isRefresh')
+    if (isRefresh >= 1) {
+      sessionStorage.setItem('isRefresh', 0)
       window.location.reload()
-    }
-    else{
+    } else {
       isRefresh++
-      console.log("isRefresh" +isRefresh);
-      sessionStorage.setItem('isRefresh',isRefresh)
-      
+      console.log('isRefresh' + isRefresh)
+      sessionStorage.setItem('isRefresh', isRefresh)
     }
   }
- 
 })
 export default router
