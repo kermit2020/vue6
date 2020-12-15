@@ -8,6 +8,7 @@ import User from '../components/User.vue'
 import goods_list from '../components/goods_list.vue'
 import detail from '../components/goods_detail.vue'
 import search from '../components/search.vue'
+import collect from '../components/collect.vue'
 
 Vue.use(VueRouter)
 
@@ -69,6 +70,11 @@ const routes = [
     component: search
   },
   {
+    path: '/collect',
+    name: 'collect',
+    component: collect
+  },
+  {
     path: '/pay',
     component: pay
     // route level code-splitting
@@ -98,4 +104,5 @@ router.afterEach((to, from) => {
     }
   }
 })
+//end
 export default router

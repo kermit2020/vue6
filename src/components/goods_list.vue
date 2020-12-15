@@ -10,6 +10,7 @@
     <router-link to="search">
       <van-search v-model="value" placeholder="请输入搜索关键词" shape="round" background="var(--color-tint)" class="search" />
     </router-link>
+    <!-- 搜索框 end -->
     <tab-control :titles="['综合', '销量', '价格']" class="tab-control" @tabClickNow="tabClickNow"></tab-control>
     <div class="first_tab" ref="tabRef" id="tab">
       <router-link class="goods_item" v-for="(v1, i1) in goodsList" :key="i1" :to="'/detail?goods_id=' + v1.goods_id">
@@ -254,7 +255,7 @@ import { Toast } from 'vant'
         }
         .goods_price {
           color: var(--color-tint);
-          font-size: 32rpx;
+          font-size: 32*0.01rem;
         }
       }
     }

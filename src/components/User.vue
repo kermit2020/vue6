@@ -25,11 +25,11 @@
             <div class="his_num">0</div>
             <div class="his_name">收藏的店铺</div>
           </a>
-          <a  to="/collect">
+          <router-link  to="/collect">
             
             <div class="his_num">{{ collectNum }}</div>
             <div class="his_name">收藏的商品</div>
-          </a>
+          </router-link>
           <a>
             <div class="his_num">0</div>
             <div class="his_name">关注的商品</div>
