@@ -9,6 +9,7 @@ import goods_list from '../components/goods_list.vue'
 import detail from '../components/goods_detail.vue'
 import search from '../components/search.vue'
 import collect from '../components/collect.vue'
+import order from '../components/order.vue'
 
 Vue.use(VueRouter)
 
@@ -73,6 +74,11 @@ const routes = [
     path: '/collect',
     name: 'collect',
     component: collect
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: order
   },
   {
     path: '/pay',

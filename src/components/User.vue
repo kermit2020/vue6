@@ -43,22 +43,22 @@
         <div class="orders_wrap">
           <div class="orders_title">我的订单</div>
           <div class="order_content">
-            <a url="/pages/order/index?type=1">
+            <router-link  to="/order?type=1">
               <div class="iconfont icon-ding_dan"></div>
               <div class="order_name">全部订单</div>
-            </a>
-            <a url="/pages/order/index?type=2">
+            </router-link>
+            <router-link  to="/order?type=2">
               <div class="iconfont icon-fukuantongzhi"></div>
               <div class="order_name">待付款</div>
-            </a>
-            <a url="/pages/order/index?type=3">
+            </router-link>
+            <router-link  to="/order?type=3">
               <div class="iconfont icon-receipt-address"></div>
               <div class="order_name">待收货</div>
-            </a>
-            <a>
+            </router-link>
+            <router-link  to="/order?type=4">
               <div class="iconfont icon-tuihuotuikuan_dianpu"></div>
               <div class="order_name">退款/退货</div>
-            </a>
+            </router-link>
           </div>
           <!-- 收货地址管理 -->
           <div class="address_wrap">

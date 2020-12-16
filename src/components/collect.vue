@@ -84,7 +84,7 @@ export default {
       background-color: #fff;
     }
     .active {
-      color: var(--themeColor01);
+      color: var(--color-tint);
       border-color: currentColor;
     }
   }
