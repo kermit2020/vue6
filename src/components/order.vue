@@ -97,13 +97,11 @@ export default {
     TabControl2
   },
   mounted() {
-    //   const token =wx.getStorageSync("token");
-    // if(!token){
-    //   wx.navigateTo({
-    //     url: '/pages/auth/index'
-    //   });
-    //    return;
-    // }
+      const token =JSON.parse(sessionStorage.getItem("token"));
+    if(!token){
+      this.$router.replace('/auth')
+       return;
+    }
     // let pages =  getCurrentPages(); 这是微信$route方法
     this.getOrders(this.$route.query.type)
   },

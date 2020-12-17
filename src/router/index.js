@@ -10,6 +10,7 @@ import detail from '../components/goods_detail.vue'
 import search from '../components/search.vue'
 import collect from '../components/collect.vue'
 import order from '../components/order.vue'
+import auth from '../components/auth.vue'
 
 Vue.use(VueRouter)
 
@@ -79,6 +80,11 @@ const routes = [
     path: '/order',
     name: 'order',
     component: order
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: auth
   },
   {
     path: '/pay',

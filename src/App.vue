@@ -34,7 +34,7 @@ export default {
 #app {
   position: relative;
   .wrap {
-    overflow: auto;
+    // overflow: auto;
   }
   .nav-bar {
     background-color: var(--color-tint);
