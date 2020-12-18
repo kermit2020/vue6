@@ -109,11 +109,13 @@ export default {
   width: 100%;
   font-size: 16/50rem;
   background-color: #edece8;
-  height: 93vh;
+
+  height: 125vh;
 }
 
 /* pages/user/index.wxss */
 .user_info_wrap {
+  
   position: relative;
   height: 45vh;
   background-color: var(--color-tint);

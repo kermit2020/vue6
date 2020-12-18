@@ -11,6 +11,7 @@ import search from '../components/search.vue'
 import collect from '../components/collect.vue'
 import order from '../components/order.vue'
 import auth from '../components/auth.vue'
+import feedback from '../components/feedback.vue'
 
 Vue.use(VueRouter)
 
@@ -85,6 +86,11 @@ const routes = [
     path: '/auth',
     name: 'auth',
     component: auth
+  },
+  {
+    path: '/feedback',
+    name: 'feedback',
+    component: feedback
   },
   {
     path: '/pay',
